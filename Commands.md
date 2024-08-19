@@ -2,6 +2,7 @@
 
 #### General
 ```
+nmap -T5 -p- ip
 sudo nmap -A -p- -T5 --script "vuln" -oN nmap -oX nmap.xml
 nc ip port
 ```
@@ -11,6 +12,7 @@ nc ip port
 nikto -o nikto -h
 dirb -o dirb http://192.168.0.0
 ffuf -u http://IP/FUZZ -w wordlist -recursion  
+zap.sh
 ```
 
 #### SMB
@@ -28,6 +30,8 @@ mount -t cifs -o username=user,password=password //10.0.0 .3/Share /mnt/share
 hydra -L users.txt -P Passwords.txt http-post-form "/path.php:user=^USER^&pass=^PASS^:F=Fail_Text"
 
 hydra -l root -P Passwords.txt ssh://URL 
+
+Zap fuzzing
 ```
 
 #### Local Cracking
